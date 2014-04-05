@@ -1,0 +1,28 @@
+{
+  "name": "miaboutique",
+  "version": "0.0.1",
+  "authors": [
+    "Nick B. Palomino <nbpalomino@gmail.com>"
+  ],
+  "description": "Sitio e-commerce de ropa de moda",
+  "main": "public/index.php",
+  "keywords": [
+    "moda",
+    "venta",
+    "peru",
+    "ropa"
+  ],
+  "license": "MIT",
+  "homepage": "www.miaboutique.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3"
+  }
+}
