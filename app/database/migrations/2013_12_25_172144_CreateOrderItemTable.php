@@ -24,7 +24,7 @@ class CreateOrderItemTable extends Migration {
 			$table->dateTime("updated_at");
 			$table->dateTime("deleted_at");
 
-		})
+		});
 	}
 
 	/**

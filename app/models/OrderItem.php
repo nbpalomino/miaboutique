@@ -3,14 +3,14 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Category extends Eloquent {
+class OrderItem extends Eloquent {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'category';
+	protected $table = 'order_item';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -22,13 +22,23 @@ class Category extends Eloquent {
 	protected $softDelete 	= true;
 
 	/**
-	 * Get the e-mail address where password reminders are sent.
+	 * Get the account relation.
 	 *
-	 * @return string
+	 * @return Account
 	 */
-	public function products()
+	public function product()
 	{
-		return $this->hasMany('Product');
+		return $this->belongsTo("Product");
+	}
+
+	/**
+	 * Get order items
+	 *
+	 * @return OrderItem
+	 */
+	public function order()
+	{
+		return $this->belongsTo("Order");
 	}
 
 }

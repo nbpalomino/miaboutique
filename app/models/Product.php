@@ -3,21 +3,21 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Category extends Eloquent {
+class Product extends Eloquent {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'category';
+	protected $table = 'product';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $guarded 	= ["id"];
+	protected $guarded 		= ["id"];
 
 	protected $softDelete 	= true;
 
@@ -26,9 +26,21 @@ class Category extends Eloquent {
 	 *
 	 * @return string
 	 */
-	public function products()
+	public function orders()
 	{
-		return $this->hasMany('Product');
+		return $this->belongsToMany('Order', 'order_item');
 	}
+
+	public function orderItems()
+	{
+		return $this->hasMany('OrderItem');
+	}
+
+	public function category()
+	{
+		return $this->belongsTo('Category');
+	}
+
+
 
 }

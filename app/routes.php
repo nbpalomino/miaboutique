@@ -15,3 +15,28 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::any('index', [
+	'as'	=> 'index',
+	'uses'	=> 'IndexController@indexAction',
+]);
+
+Route::any('category/index', [
+	'as'	=> 'category/index',
+	'uses'	=> 'CategoryController@indexAction',
+]);
+
+Route::any('product/index', [
+	'as'	=> 'product/index',
+	'uses'	=> 'ProductController@indexAction',
+]);
+
+Route::any('account/authenticate', [
+	'as'	=> 'account/authenticate',
+	'uses'	=> 'AccountController@authenticateAction',
+]);
+
+Route::any('order/index', [
+	'as'	=> 'order/index',
+	'uses'	=> 'OrderController@indexAction',
+]);
